@@ -1,0 +1,57 @@
+/* SearchForm.css */
+
+.search-form {
+  background-color: #000000;
+  padding: 20px;
+  height: 50vh;
+}
+
+.search-header {
+  font-size: 40px;
+  margin: 0 0 30px 100px;
+  color: #fff;
+}
+
+.form-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0px 0 0 100px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-item {
+  margin: 20px 20px;
+}
+
+label {
+  color: #fff;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Styling for select and input */
+select,
+input[type="date"],
+input[type="text"] {
+  width: 500px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  font-size: 14px;
+}
+
+/* Styling for button */
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px;
+  margin: 20px 20px;
+  cursor: pointer;
+}
