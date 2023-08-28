@@ -20,15 +20,24 @@ export const fetchCapsules = async (status, capsuleSerial, type) => {
     url += url.includes("?") ? `&type=${type}` : `?type=${type}`;
   }
 
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error("Error fetching data");
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching data", error);
-    throw error; // Rethrow the error
+try {
+  const username = "root";
+  const password = "basic123";
+  const headers = new Headers({
+    'Authorization': 'Basic ' + btoa(username + ':' + password)
+  });
+
+  const response = await fetch(url, { headers });
+  
+  if (!response.ok) {
+    throw new Error("Error fetching data");
   }
+  
+  const data = await response.json();
+  return data;
+} catch (error) {
+  console.error("Error fetching data", error);
+  throw error; // Rethrow the error
+}
+
 };
