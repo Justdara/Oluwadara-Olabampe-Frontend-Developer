@@ -39,7 +39,7 @@
         }
     }
 
-if ($_SERVER['REQUEST_URI'] === '/api') {
+if (parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) === '/index.php/api') {
     $mySpaceXAPI = new MySpaceXAPI();
     
     $username = $_SERVER['PHP_AUTH_USER'] ?? '';
