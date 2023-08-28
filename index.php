@@ -45,7 +45,11 @@ if ($_SERVER['REQUEST_URI'] === '/api') {
     $username = $_SERVER['PHP_AUTH_USER'] ?? '';
     $password = $_SERVER['PHP_AUTH_PW'] ?? '';
     
-    $capsules = $mySpaceXAPI->getCapsules($username, $password, 'C101', 'Dragon 1.0', 'retired');
+    $capsuleSerial = $_GET['capsule_serial'] ?? ''; // Get capsule_serial from query parameter
+    $type = $_GET['type'] ?? ''; // Get type from query parameter
+    $status = $_GET['status'] ?? ''; // Get status from query parameter
+    
+    $capsules = $mySpaceXAPI->getCapsules($username, $password, $capsuleSerial, $type, $status);
     
     header('Content-Type: application/json');
     echo json_encode($capsules, JSON_PRETTY_PRINT);
