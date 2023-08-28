@@ -1,6 +1,6 @@
 // api.js
 
-const BASE_URL = "https://api.spacexdata.com/v3";
+const BASE_URL = "localhost/api";
 
 export const fetchCapsules = async (status, capsuleSerial, type) => {
   let url = `${BASE_URL}/capsules`;
